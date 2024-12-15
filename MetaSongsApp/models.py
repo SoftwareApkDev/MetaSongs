@@ -23,3 +23,13 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.user.username}: {self.music.title}"
+
+
+class Playlist(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    songs = models.ManyToManyField(Music)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name

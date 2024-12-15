@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Music, Comment
+from .models import Music, Comment, Playlist
 
 class MusicSerializer(serializers.ModelSerializer):
     artist = serializers.StringRelatedField()  # Show artist username
@@ -13,3 +13,9 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = ['id', 'user', 'music', 'content', 'created_at']
+
+
+class PlaylistSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Playlist
+        fields = ['id', 'name', 'songs', 'user']
