@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.element {
+    overflow: auto;
+  }
+  
+  .element::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .element::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .element::-webkit-scrollbar-thumb {
+    background: #e48125;
+    border-radius: 0px 15px 15px 0px;
+  }
+  
+  .element::-webkit-scrollbar-thumb:hover {
+    background: #f38015;
+  }
+  
+  @media (max-width: 768px) {
+    .element {
+      -ms-overflow-style: none; /* Internet Explorer */
+      scrollbar-width: none; /* Firefox */
+    }
+  
+    .element::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid #ccc;
+    border-radius: 0.25rem;
+    background-color: transparent;
+    position: relative;
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: #f97316; /* Warna saat dicentang */
+    border-color: #f97316; /* Border warna oranye */
+  }
+  
+  input[type="checkbox"]:checked::after {
+    content: '✔'; /* Simbol ceklis */
+    font-size: 0.8rem;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animate-spin {
+    animation: spin 4s linear infinite;
+  }
+  
