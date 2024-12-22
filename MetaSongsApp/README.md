@@ -48,3 +48,11 @@ export default tseslint.config({
   },
 })
 ```
+
+# How to Run Frontend?
+
+From **MetaSongsApp** directory of this project, run the following command on Terminal.
+
+```
+npm run dev
+```
